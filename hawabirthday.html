@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bibiilll! 🎂</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #fdf2f8 25%, #fce7f3 50%, #fbcfe8 75%, #f9a8d4 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Floating Hearts Animation */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            color: #f472b6;
+            font-size: 20px;
+            animation: float 6s infinite linear;
+            opacity: 0.7;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Cute Animals */
+        .cute-animals {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .animal {
+            position: absolute;
+            font-size: 40px;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        
+        .cat {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .bunny {
+            top: 20%;
+            right: 8%;
+            animation-delay: 0.5s;
+        }
+        
+        .bear {
+            bottom: 15%;
+            left: 3%;
+            animation-delay: 1s;
+        }
+        
+        .pig {
+            bottom: 25%;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ec4899, #f472b6, #f9a8d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #be185d;
+            font-weight: 500;
+        }
+        
+        /* Message Card */
+        .message-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15);
+            border: 2px solid rgba(249, 168, 212, 0.3);
+            animation: fadeInUp 1s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(249, 168, 212, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+        
+        .message-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #831843;
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+        
+        .message-text p {
+            margin-bottom: 20px;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+            margin: 0 2px;
+        }
+        
+        /* Signature */
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #be185d;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Decorative Elements */
+        .decoration {
+            position: absolute;
+            pointer-events: none;
+        }
+        
+        .star {
+            color: #f472b6;
+            font-size: 25px;
+            animation: twinkle 2s infinite alternate;
+        }
+        
+        .star1 {
+            top: 20px;
+            left: 50px;
+            animation-delay: 0s;
+        }
+        
+        .star2 {
+            top: 100px;
+            right: 30px;
+            animation-delay: 0.7s;
+        }
+        
+        .star3 {
+            bottom: 80px;
+            left: 80px;
+            animation-delay: 1.4s;
+        }
+        
+        .star4 {
+            bottom: 200px;
+            right: 60px;
+            animation-delay: 0.3s;
+        }
+        
+        @keyframes twinkle {
+            from {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* Button */
+        .birthday-btn {
+            display: block;
+            margin: 30px auto 0;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ec4899, #f472b6);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        .birthday-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(236, 72, 153, 0.4);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .message-card {
+                padding: 25px;
+            }
+            
+            .message-text {
+                font-size: 1rem;
+            }
+            
+            .animal {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .message-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            .animal {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts" id="hearts"></div>
+    
+    <!-- Cute Animals -->
+    <div class="cute-animals">
+        <div class="animal cat">🐱</div>
+        <div class="animal bunny">🐰</div>
+        <div class="animal bear">🧸</div>
+        <div class="animal pig">🐷</div>
+    </div>
+    
+    <!-- Decorative Stars -->
+    <div class="decoration star star1">✨</div>
+    <div class="decoration star star2">⭐</div>
+    <div class="decoration star star3">✨</div>
+    <div class="decoration star star4">⭐</div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Happy Birthday Bibiilll!</h1>
+            <p class="subtitle">🥳🎂🎁</p>
+        </div>
+        
+        <div class="message-card">
+            <div class="message-text">
+                <p><strong>Happy birthday Bibiilll!!</strong> <span class="emoji">🥳🎂🎁</span></p>
+                
+                <p>Ga nyangka udah nambah lagi aja usia kamu dan juga berkurang tentunya <span class="emoji">😇🙆</span></p>
+                
+                <p>I wish dengan bertambahnya usia kamu bukan hanya usia yang bertambah tetapi juga diri kamu ikut menjadi lebih baik lagi dari segala aspek, entah itu managemant waktu dan kontrol emosi nya juga bisa ditingkatkan lagi tidak harus perfect tapi cukup berusaha menjadi yang terbaik dari diri kamu and i wish <span class="emoji">🫶🏻</span> segala wish list kamu dari yang terkecil hingga terbesarr dapatt tercapaii tanpa ada hambatan meskipun hambatan itu pasti ada saja tapi aku yakin semua itu pasti ada solusinyaa <span class="emoji">👏🏻👊🏻</span> Ga bolee gampang nyerahh gituu ajaa <span class="emoji">😼👊🏻</span></p>
+                
+                <p>Haw kamu itu orang paling cantik nan lucu se lucu-lucunya yang pernah aku temuin seumur hidup aku, kita sudah kenal satu tahun itu bukan waktu yang lama pertingkaian dari yang kecil hingga besar kita alamin semua dan bukan suatu hal yang mudah buat melalui itu semua <span class="emoji">😖🫂</span> dan itu juga yang menjadi bukti kamu orang yang terus melangkah tidak stuck di satu tempat i proud of youu dutt <span class="emoji">🫵🏻</span></p>
+                
+                <p>Aku pribadi juga minta maaf aku belum bisa ngasih yang terbaik buat hubungan kita <span class="emoji">😾</span>, aku bukan orang yang tepat buat kamu dengan segala effort kamu aku belum ngerasa pantes aku masih banyak kurangnya dibandingkan lebihnya aku masih berproses juga buat jadi lebih baik <span class="emoji">😁</span></p>
+                
+                <p>Kamu orang yang ceroboh menurut aku ya mungkin kamu juga harusnya sadar juga sama sifat kamu yang satu ini, but i just wanna say kalo aku masih ada jikalau emang kamu perlu aku ada jika ngga perlu aku ada aku juga ada dan ga akan pergi mana mana ko aku masih terbuka kalo kamu perlu bantuan aku pasti aku ulurin tangan aku buat bantu kamu sebisa aku kamu tidakk sendiriannn <span class="emoji">✌🏻</span> ada aku yang selalu merhatiin kamu dari jauh sekalipun</p>
+                
+                <p>Sekali lagii akuu ucapin <strong>selamatt ulang tahunnn, haww!!</strong> <span class="emoji">🎉</span> ceria selalu yaa kamuu jangan sedii sediii okeuy?? Promise</p>
+                
+                <p><strong>Aku Sayang Kamu</strong> <span class="emoji">🤍😼👊🏻</span></p>
+            </div>
+            
+            <div class="signature">
+                From Adam Khairy Shafwan your Ex <span class="emoji">🧸</span>
+            </div>
+        </div>
+        
+        <button class="birthday-btn" onclick="showSurprise()">🎁 Klik untuk Kejutan! 🎁</button>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heartsContainer = document.getElementById('hearts');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = Math.random() > 0.5 ? '💖' : '💕';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heartsContainer.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+        
+        // Create hearts continuously
+        setInterval(createHeart, 800);
+        
+        // Birthday surprise function
+        function showSurprise() {
+            // Create confetti effect
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.innerHTML = ['🎉', '🎊', '🎈', '🎀', '💖', '🌸'][Math.floor(Math.random() * 6)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = '30px';
+                    confetti.style.zIndex = '1000';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.animation = 'float 3s linear forwards';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 50);
+            }
+            
+            // Show surprise message
+            setTimeout(() => {
+                alert('🎉 Selamat Ulang Tahun lagi, Bibiilll! Semoga hari ini penuh kebahagiaan! 💖');
+            }, 1000);
+        }
+        
+        // Add sparkle effect on mouse move
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.1) {
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.fontSize = '20px';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '999';
+                sparkle.style.animation = 'twinkle 1s ease-out forwards';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
+        });
+        
+        // Add bounce animation to animals on hover
+        document.querySelectorAll('.animal').forEach(animal => {
+            animal.addEventListener('mouseenter', () => {
+                animal.style.transform = 'scale(1.2)';
+                animal.style.transition = 'transform 0.3s ease';
+            });
+            
+            animal.addEventListener('mouseleave', () => {
+                animal.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
